@@ -64,12 +64,25 @@ body {
     text-transform: uppercase;
     font-size: 0.6rem;
 }
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: #fff;
+    margin: 0.2rem 0;
+}
 main {
     flex: 1;
     width: 100%;
     max-width: 1200px;
     margin-inline: auto;
     padding: 2rem 4rem;
+    column-gap: 20rem;
 }
 
 main .content {
@@ -91,12 +104,13 @@ main .content .description-content h1 span {
 main .content .description-content p {
     font-size: 1rem;
     line-height: 1.8rem;
+    margin-bottom: 3rem;
 }
-main .content .description-content button {
+main .content .description-content a {
     padding: 1rem 2rem;
+    text-decoration: none;
     border: 3px solid transparent;
     border-radius: 999px;
-    margin-block-start: 1rem;
     background-color: var(--main-color);
     font-family: 'Quicksand', sans-serif;
     text-transform: uppercase;
@@ -106,15 +120,121 @@ main .content .description-content button {
     cursor: pointer;
     transition: all 0.15s ease-in;
 }
-main .content .description-content button:hover{
+main .content .description-content a:hover{
     background-color: var(--body-color);
-    color: var(--main-color);
+    color: white;
     border: 3px solid var(--main-color);
     font-weight: 700;
 }
-
-/* note lanjut sampai sini*/
-
+main #skill {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    justify-content: center;
+}
+main #skill > h1 {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    font-size: 2rem;
+}
+main #skill .skill-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 4rem;
+}
+main #skill .skill-content .card {
+    padding: 20px;
+    width: 20rem;
+    height: 14rem;
+    border-radius: 20px;
+    background-color: #008170;
+    -webkit-box-shadow: 5px 10px 12px -3px rgba(171,255,244,1);
+    -moz-box-shadow: 5px 10px 12px -3px rgba(171,255,244,1);
+    box-shadow: 5px 10px 12px -3px rgba(171,255,244,1);
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+}
+main #skill .skill-content .card:hover {
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 12px 10px rgba(171,255,244,1);
+    -moz-box-shadow: 0px 0px 12px 10px rgba(171,255,244,1);
+    box-shadow: 0px 0px 12px 10px rgba(171,255,244,1);
+    color: #232D3F;
+}
+main #about{
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    padding: 60px;
+    text-align: center;
+    color: var(--body-color);
+    background-color: white;
+    border-radius: 20px;
+}
+main #about h1{
+    font-size: 2rem;
+    font-weight: 700;
+}
+main #about p{
+    padding: 30px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+main #about h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+main #form{
+    margin-top: 20px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+main #form h1{
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+main #form label{
+    margin-left: 13%;
+}
+main #form input {
+    width: 75%;
+    padding: 12px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid rgba(171,255,244,1);
+    border-radius: 4px;
+}
+main #form input:focus{
+    border: 3px solid rgb(0, 247, 214);
+}
+main #form button{
+    padding: 1rem 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid transparent;
+    border-radius: 999px;
+    margin-block-start: 1rem;
+    background-color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+main #form button:hover{
+    background-color: var(--body-color);
+    color: white;
+    border: 3px solid var(--main-color);
+    font-weight: 700;
+}
 main .contact {
     position: fixed;
     inset-block: 0;
@@ -150,4 +270,64 @@ main .contact .social-media li a {
 }
 main .contact .social-media li a:hover {
     color: #89b0d9;
+}
+footer{
+    width: 100%;
+    background-color:var(--main-color);
+}
+
+footer p{
+    text-align: center;
+}
+@media only screen and (max-width: 1000px) {
+    .navbar-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .navbar-container .nav-list ul{
+        column-gap: 0.5rem;
+    }
+    main .content{
+        flex-direction: column;
+    }
+    main .content span{
+      display: block;
+    }
+    main .content aside{
+        order: -1;
+    }
+    main #skill .skill-content{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem ;
+    }
+    main #skill .skill-content .card{
+        width: 70%;
+    }
+}
+@media only screen and (max-width: 620px){
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: var(--body-color);
+    }
+
+    .nav-list.show {
+        display: flex;
+        flex-direction: column;
+        transition: all;
+
+    }
+
+    .nav-list li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
 }

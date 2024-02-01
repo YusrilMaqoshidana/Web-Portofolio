@@ -11,7 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Poppins:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <!-- font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <!-- Javascript -->
+    <link rel="javascript" href="">
     <title>Portofolio</title>
 </head>
 <body>
@@ -27,6 +28,11 @@
                 <li><a href="#form">Contact</a></li>
             </ul>
         </nav>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
     </header>
     <main>
         <div class="content">
@@ -35,7 +41,7 @@
                 <h1><span>I'm interest in </span>Web Developer 🚀</h1>
                 <p>Selamat datang di website portofolio resmi saya! Melalui portofolio ini, 
                     saya berbagi karya-karya terbaik saya. Terima kasih atas kunjungan Anda di web portofolio saya. Saya berharap Anda menemukan inspirasi dan wawasan 💕</p>
-                <button>Hubungi Saya</button>
+                <a href="#form">Hubungi Saya</a>
             </article>
             <aside class="content-profile">
                 <img src="image/profil-removebg-preview.png" alt="my profil">
@@ -54,7 +60,7 @@
                     <p>Saya tertarik dengan Web Developer</p>
                 </div>
                 <div class="card">
-                    <h1>Mobile Developer</h1>
+                    <h1>Mobile<br>Developer</h1>
                     <p>Saya sedang mempelajari Mobile Developer</p>
                 </div>
             </div>
@@ -63,44 +69,38 @@
         <article id="about">
             <h1>About Me</h1>
             <p>"Salam kenal! Nama saya Moh. Yusril Maqoshidana, sekarang berstatus sebagai mahasiswa di Universitas Jember Prodi Teknologi Informasi, saya suka dengan teknologi karena dampak yang diberikan sangat besar bagi dunia. Awal saya belajar coding adalah belajar Pemrograman Web, khususnya sebagai Frontend Enginer. Saya juga bisa mengoperasikan sistem operasi Linux dan mampu menerapkan Design Thinking untuk memecahkan masalah User Experience beserta User Interface. Saat ini, saya sedang belajar dunia Mobile Development, Restfull API, dan Kafka untuk terus mengasah keterampilan saya di dunia pemrograman yang perkembangannya sangat cepat ini. Dengan belajar sambil mendengar lagu Taylor Swift, saya selalu bersemangat untuk belajar dan menghadirkan sebuah teknologi yang bermanfaat dan fungsionalitas yang responsif. Mari kita bersama-sama menciptakan solusi teknologi yang inovatif!"</p>
-            <h3>~ Moh. Yusril Maqoshidana</h3>
+            <h3>~ Moh. Yusril Maqoshidana ~</h3>
         </article>
 
         <form action="" id="form">
             <h1>Contact Me</h1>
-            <div>
+            <div class="child-form">
                 <label for="name">Name</label>
                 <br>
-                <input type="name" id="name" />
+                <input type="name" id="name" placeholder="ex: John"/>
               </div>
               
               <div>
                 <label for="email">Alamat Email</label>
                 <br>
-                <input type="email" id="email" />
-              </div>
-
-              <div>
-                <label for="number">Alamat Email</label>
-                <br>
-                <input type="number" id="number" />
+                <input type="email" id="email" placeholder="ex: jhon@gmail.com"/>
               </div>
               <div>
                 <label for="number">Telepon</label>
                 <br>
-                <input type="number" id="number" />
+                <input type="number" id="number" placeholder="ex: +6285235..."/>
               </div>
               <div>
                 <label for="text">Perusahaan</label>
                 <br>
-                <input type="text" id="text" />
+                <input type="text" id="text" placeholder="Your company..."/>
               </div>
               <div>
                 <label for="text">Pesan</label>
                 <br>
-                <input type="text" id="text" />
+                <input type="text" id="text" placeholder="Ketik disini..."/>
               </div>
-              <button>Kirim</button>
+              <button type="submit" value="submit">Kirim</button>
         </form>
 
         <aside class="contact">
@@ -124,4 +124,10 @@
         <p>Portofolio C 2024, Moh. Yusril Maqoshidana</p>
     </footer>
 </body>
+<script>
+        function toggleMenu() {
+            var navList = document.querySelector('.nav-list');
+            navList.classList.toggle('show');
+        }
+</script>
 </html>
